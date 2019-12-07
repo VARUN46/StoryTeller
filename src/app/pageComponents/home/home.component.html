@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-12">
+  <app-rules></app-rules>
+  </div>
+</div>
+
+<div class="row">
+ <div class="col-12">   
+    <div class="jumbotron">
+        <h1>Write The Best Stories In The Most Easiest Way</h1>
+        
+        <form [formGroup]="createExcerptForm" (ngSubmit)="addExcerpt()">
+          <div class="row">
+          <div class="col-6">
+            <button class="btn btn-info {{ createExcerptData.errors === null?'visible':'invisible' }}">Add New {{ addEntryType.value }}</button>
+          </div>
+          <div class="col-6">
+            <label>{{ 'Length: '+this.createExcerptForm.get('createExcerptData').value.length }}</label>
+          </div>
+          </div>
+          <textarea class="form-control" [placeholder]="newExcerptHint" 
+          formControlName="createExcerptData"></textarea>
+        </form>
+        <hr/>
+        <button (click)="deleteExcerpt()" class="btn btn-warning">Delete Excerpt</button>
+          <button (click)="deleteStory()" class="btn btn-danger">Delete Story</button>
+          <hr/>
+          <app-story *ngFor="let storyEntry of storiesData.stories" [story]="storyEntry"></app-story>
+
+
+    </div>
+  </div>
+</div>

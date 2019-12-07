@@ -1,0 +1,4 @@
+<button class="btn btn-dark" (click)="toggleRulesBook()"> {{ isVisible ? 'Hide' : 'Show' }} Rules Book</button>
+<div *ngIf="isVisible" class="container">
+<p *ngFor="let rule of rules">{{ rule }}</p>
+</div>

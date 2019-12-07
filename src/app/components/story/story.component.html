@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+        <input type="checkbox" [checked]="story.isSelected" (click)="selectStory()" />
+        <div class="row">
+            <div class="col-12">
+                <p>{{ story.titleOfStory | storyTitleFormatter }}</p>
+            </div>
+            <app-excerpt class="col-md-4" *ngFor="let excerpt of story.excerpts" [excerpt]="excerpt"></app-excerpt>
+        </div>
+    </div>
+</div>
+<br/>
